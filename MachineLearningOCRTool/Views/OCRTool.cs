@@ -72,7 +72,7 @@ namespace MachineLearningOCRTool.Views
             m_binarized = filter.Apply(m_original);
 
             // Binarize Picture.
-            Threshold bin = new Threshold((int)txtBinThershold.Value);
+            Threshold bin = new Threshold((int)txtBinThreshold.Value);
             bin.ApplyInPlace(m_binarized);
 
             // create filter
@@ -107,7 +107,7 @@ namespace MachineLearningOCRTool.Views
 
             // Merge intersecting blobs (we filter some very small blobs first).
             List<Rectangle> mergedBlobs =
-                MergeIntersectingBlobs(blobs.Where(r => r.Width * r.Height >= txtPreMergeFilter.Value).ToArray());
+                MergeIntersectingBlobs(blobs.Where(r => r.Width * r.Height >= txtPreMergeFilter.Value && r.Width >= txtPreMergeXFilter.Value && r.Height >= txtPreMergeYFilter.Value).ToArray());
 
             // Filter for blobs that are larger than 50 "sq pixels" and order by Y.
             mergedBlobs =

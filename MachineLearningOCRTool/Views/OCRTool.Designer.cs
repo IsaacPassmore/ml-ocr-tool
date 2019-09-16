@@ -39,14 +39,18 @@
             this.txtPostMergeFilter = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelxfil = new System.Windows.Forms.Label();
+            this.labelyfil = new System.Windows.Forms.Label();
             this.txtPreMergeFilter = new System.Windows.Forms.NumericUpDown();
+            this.txtPreMergeXFilter = new System.Windows.Forms.NumericUpDown();
+            this.txtPreMergeYFilter = new System.Windows.Forms.NumericUpDown();
             this.lblSelected = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHeightMergeSense = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.txtWidthMergeSense = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtBinThershold = new System.Windows.Forms.NumericUpDown();
+            this.txtBinThreshold = new System.Windows.Forms.NumericUpDown();
             this.chkShowBinarize = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -75,9 +79,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPostMergeFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPreMergeFilter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreMergeXFilter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreMergeYFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHeightMergeSense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWidthMergeSense)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBinThershold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBinThreshold)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtResizeInterval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExtractedBackColor)).BeginInit();
@@ -210,6 +216,79 @@
             0,
             0,
             0});
+
+            // 
+            // labelxfil
+            // 
+            this.labelxfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelxfil.AutoSize = true;
+            this.labelxfil.Location = new System.Drawing.Point(861, 269);
+            this.labelxfil.Name = "labelxfil";
+            this.labelxfil.Size = new System.Drawing.Size(107, 13);
+            this.labelxfil.TabIndex = 9;
+            this.labelxfil.Text = "Pre Merge Filter Size X:";
+            this.toolTip1.SetToolTip(this.labelxfil, "The size of blobs (width*height) that will get filtered\r\nbefore the merge process" +
+        " take place. This is used\r\nto filter some very small blobs.");
+            // 
+            // txtPreMergeXFilter
+            // 
+            this.txtPreMergeXFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPreMergeXFilter.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtPreMergeXFilter.Location = new System.Drawing.Point(988, 267);
+            this.txtPreMergeXFilter.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtPreMergeXFilter.Name = "txtPreMergeXFilter";
+            this.txtPreMergeXFilter.Size = new System.Drawing.Size(54, 20);
+            this.txtPreMergeXFilter.TabIndex = 8;
+            this.txtPreMergeXFilter.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+
+            // 
+            // labelyfil
+            // 
+            this.labelyfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelyfil.AutoSize = true;
+            this.labelyfil.Location = new System.Drawing.Point(861, 297);
+            this.labelyfil.Name = "labelyfil";
+            this.labelyfil.Size = new System.Drawing.Size(107, 13);
+            this.labelyfil.TabIndex = 9;
+            this.labelyfil.Text = "Pre Merge Filter Size Y:";
+            this.toolTip1.SetToolTip(this.labelyfil, "The size of blobs (width*height) that will get filtered\r\nbefore the merge process" +
+        " take place. This is used\r\nto filter some very small blobs.");
+            // 
+            // txtPreMergeYFilter
+            // 
+            this.txtPreMergeYFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPreMergeYFilter.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtPreMergeYFilter.Location = new System.Drawing.Point(988, 295);
+            this.txtPreMergeYFilter.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtPreMergeYFilter.Name = "txtPreMergeYFilter";
+            this.txtPreMergeYFilter.Size = new System.Drawing.Size(54, 20);
+            this.txtPreMergeYFilter.TabIndex = 8;
+            this.txtPreMergeYFilter.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+
             // 
             // lblSelected
             // 
@@ -297,29 +376,29 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Binarization Thershold:";
+            this.label5.Text = "Binarization Threshold:";
             this.toolTip1.SetToolTip(this.label5, "The pixel intensity (between 0-255) that separates\r\nbetween the black and white i" +
         "n the binarization process.");
             // 
-            // txtBinThershold
+            // txtBinThreshold
             // 
-            this.txtBinThershold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBinThershold.Increment = new decimal(new int[] {
+            this.txtBinThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBinThreshold.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.txtBinThershold.Location = new System.Drawing.Point(988, 105);
-            this.txtBinThershold.Maximum = new decimal(new int[] {
+            this.txtBinThreshold.Location = new System.Drawing.Point(988, 105);
+            this.txtBinThreshold.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
-            this.txtBinThershold.Name = "txtBinThershold";
-            this.txtBinThershold.Size = new System.Drawing.Size(54, 20);
-            this.txtBinThershold.TabIndex = 15;
-            this.txtBinThershold.Value = new decimal(new int[] {
-            200,
+            this.txtBinThreshold.Name = "txtBinThreshold";
+            this.txtBinThreshold.Size = new System.Drawing.Size(54, 20);
+            this.txtBinThreshold.TabIndex = 15;
+            this.txtBinThreshold.Value = new decimal(new int[] {
+            210,
             0,
             0,
             0});
@@ -347,12 +426,12 @@
             this.groupBox1.Controls.Add(this.btnResLeft);
             this.groupBox1.Controls.Add(this.btnResDown);
             this.groupBox1.Controls.Add(this.btnResUp);
-            this.groupBox1.Location = new System.Drawing.Point(864, 283);
+            this.groupBox1.Location = new System.Drawing.Point(864, 383);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(150, 114);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Move Selected Blobs";
+            this.groupBox1.Text = "Move Selected bLOBS";
             this.toolTip1.SetToolTip(this.groupBox1, "Move the selected blobs.\r\nIn order to change the size of the blob hover the\r\nblob" +
         " edge and drag.");
             // 
@@ -594,7 +673,7 @@
             this.groupBox2.Controls.Add(this.txtExportSize);
             this.groupBox2.Controls.Add(this.txtOutput);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(864, 414);
+            this.groupBox2.Location = new System.Drawing.Point(864, 514);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(207, 117);
             this.groupBox2.TabIndex = 37;
@@ -619,14 +698,18 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkShowBinarize);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtBinThershold);
+            this.Controls.Add(this.txtBinThreshold);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtHeightMergeSense);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtWidthMergeSense);
             this.Controls.Add(this.lblSelected);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelxfil);
+            this.Controls.Add(this.labelyfil);
             this.Controls.Add(this.txtPreMergeFilter);
+            this.Controls.Add(this.txtPreMergeXFilter);
+            this.Controls.Add(this.txtPreMergeYFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPostMergeFilter);
             this.Controls.Add(this.button1);
@@ -640,9 +723,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPostMergeFilter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPreMergeFilter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreMergeXFilter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreMergeYFilter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHeightMergeSense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWidthMergeSense)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBinThershold)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBinThreshold)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtResizeInterval)).EndInit();
@@ -666,14 +751,18 @@
         private System.Windows.Forms.NumericUpDown txtPostMergeFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelxfil;
+        private System.Windows.Forms.Label labelyfil;
         private System.Windows.Forms.NumericUpDown txtPreMergeFilter;
+        private System.Windows.Forms.NumericUpDown txtPreMergeXFilter;
+        private System.Windows.Forms.NumericUpDown txtPreMergeYFilter;
         private System.Windows.Forms.Label lblSelected;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown txtHeightMergeSense;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown txtWidthMergeSense;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown txtBinThershold;
+        private System.Windows.Forms.NumericUpDown txtBinThreshold;
         private System.Windows.Forms.CheckBox chkShowBinarize;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnResRight;
